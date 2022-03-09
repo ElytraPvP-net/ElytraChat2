@@ -1,0 +1,7 @@
+name: ElytraChat2
+version: 1.0
+main: net.elytrapvp.elytrachat.ElytraChat
+api-version: 1.18
+authors: [ ElytraPvP ]
+description: Chat plugin for ElytraPvP
+website: http://www.elytrapvp.net
