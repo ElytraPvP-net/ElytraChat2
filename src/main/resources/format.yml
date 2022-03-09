@@ -1,0 +1,13 @@
+formats:
+  trial:
+    prefix: "&a&lTrial"
+    name: "&7%player_name%"
+    suffix: "&8 » "
+    messageColor: "&a"
+    message: "%message%"
+  default:
+    prefix: ""
+    name: "&7%player_name%"
+    suffix: "&8 » "
+    messageColor: "&7"
+    message: "%message%"
