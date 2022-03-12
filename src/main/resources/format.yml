@@ -1,9 +1,39 @@
 formats:
+  owner:
+    prefix: "&c&lOwner"
+    name: "&7%player_name%"
+    suffix: "&8 » "
+    messageColor: "&c"
+    message: "%message%"
+  admin:
+    prefix: "&6&lAdmin"
+    name: "&7%player_name%"
+    suffix: "&8 » "
+    messageColor: "&6"
+    message: "%message%"
+  mod:
+    prefix: "&b&lMod"
+    name: "&7%player_name%"
+    suffix: "&8 » "
+    messageColor: "&b"
+    message: "%message%"
   trial:
     prefix: "&a&lTrial"
     name: "&7%player_name%"
     suffix: "&8 » "
     messageColor: "&a"
+    message: "%message%"
+  builder:
+    prefix: "&e&lBuilder"
+    name: "&7%player_name%"
+    suffix: "&8 » "
+    messageColor: "&e"
+    message: "%message%"
+  developer:
+    prefix: "&9&lDeveloper"
+    name: "&7%player_name%"
+    suffix: "&8 » "
+    messageColor: "&9"
     message: "%message%"
   default:
     prefix: ""
