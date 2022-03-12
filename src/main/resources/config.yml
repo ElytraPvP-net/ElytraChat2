@@ -8,3 +8,6 @@ MySQL:
   username: username
   password: password
   useSSL: true
+
+filter:
+  - "n+(i|1|l|;|:)+(g|4)+((e|3)+r+|a+|4+)"

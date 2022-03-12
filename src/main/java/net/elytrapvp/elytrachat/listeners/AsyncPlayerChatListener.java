@@ -58,8 +58,30 @@ public class AsyncPlayerChatListener implements Listener {
 
         String finalMessage = PlaceholderAPI.setPlaceholders(player, chatFormat.replace("%message%", chatMessage));
 
+        // Check filter
+        for(String filter : plugin.getSettingsManager().getConfig().getStringList("filter")) {
+            if(chatMessage.toLowerCase().matches(filter)) {
+                System.out.println("(filter) " + finalMessage);
+                logMessage(player, "filter: " + chatMessage);
+
+                // Send normal message to player.
+                ChatUtils.chat(player, finalMessage);
+
+                // Loop through staff.
+                for(Player staff : Bukkit.getOnlinePlayers()) {
+                    if(!staff.hasPermission("staff.filter")) {
+                        continue;
+                    }
+
+                    // Send filtered message to staff.
+                    ChatUtils.chat(staff, "&c(filter) " + finalMessage);
+                }
+                return;
+            }
+        }
+
         // Log message to the console.
-        System.out.println(false);
+        System.out.println(ChatColor.stripColor(finalMessage));
 
         // Send message to all online players.
         for(Player viewer : Bukkit.getOnlinePlayers()) {
