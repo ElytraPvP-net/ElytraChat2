@@ -58,9 +58,15 @@ public class AsyncPlayerChatListener implements Listener {
 
         String finalMessage = PlaceholderAPI.setPlaceholders(player, chatFormat.replace("%message%", chatMessage));
 
+        String toFilter = chatMessage.toLowerCase()
+                .replace(" ", "")
+                .replace("-", "")
+                .replace("_", "")
+                .replace("~", "");
+
         // Check filter
         for(String filter : plugin.getSettingsManager().getConfig().getStringList("filter")) {
-            if(chatMessage.toLowerCase().matches(filter)) {
+            if(toFilter.matches(filter)) {
                 System.out.println("(filter) " + finalMessage);
                 logMessage(player, "filter: " + chatMessage);
 
