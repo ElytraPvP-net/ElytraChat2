@@ -62,7 +62,19 @@ public class AsyncPlayerChatListener implements Listener {
                 .replace(" ", "")
                 .replace("-", "")
                 .replace("_", "")
-                .replace("~", "");
+                .replace("~", "")
+                .replace("/", "")
+                .replace("\\", "")
+                .replace("=", "")
+                .replace("+", "")
+                .replace(".", "")
+                .replace("`", "")
+                .replace("&", "")
+                .replace("$", "")
+                .replace("%", "")
+                .replace("*", "")
+                .replace("(", "")
+                .replace(")", "");
 
         // Check filter
         for(String filter : plugin.getSettingsManager().getConfig().getStringList("filter")) {
